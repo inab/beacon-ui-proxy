@@ -1,7 +1,6 @@
 # Beacon Proxy
 
-This is a **simple web proxy** that allows you to access the  [Beacon Network OMOP API](https://unicas.imib.es/beacon-network-omop/api)  
-from your browser or web applications **without CORS problems**.
+This is a **simple web proxy** that allows you to access the  [Beacon Network OMOP API](https://unicas.imib.es/beacon-network-omop/api) from your browser or web applications **without CORS problems**.
 
 You don’t need to know Python or Docker details — just follow the instructions below.
 
