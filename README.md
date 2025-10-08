@@ -8,6 +8,40 @@ You don’t need to know Python or Docker details — just follow the instructio
 
 ## 🚀 Quick Start
 
+### 0. ⚙️ Configuration (You MUST set this)
+
+Before you can use the proxy, you **must tell it where your Beacon API is**.
+
+Open the file `docker-compose.yml` and replace the value of `REAL_API_BASE`
+(currently `MY_API_ENDPOINT`) with the URL of your real Beacon API.
+
+For example:
+
+```yaml
+services:
+  beacon-proxy:
+    build: .
+    ports:
+      - "3001:8080"
+    environment:
+      REAL_API_BASE: HERE_YOUR_API_ENDPOINT    # ← CHANGE THIS
+      PROXY_BASE_PATH: /api
+      ALLOWED_ORIGINS: http://localhost:3000
+      UPSTREAM_TIMEOUT: 60
+      PORT: 8080
+```
+
+| Variable          | Description                                               | Default                              |
+|-------------------|-----------------------------------------------------------|--------------------------------------|
+| REAL_API_BASE     | Required — URL of your real Beacon API (must be changed). | HERE_YOUR_API_ENDPOINT               |
+| PROXY_BASE_PATH   | Path prefix used by your web app (default /api).          | /api                                 |
+| ALLOWED_ORIGINS   | Which websites are allowed to use this proxy (CORS)       | http://localhost:3000                |
+| PORT              | Internal port used by the container                       | 8080 (exposed as 3001 on your PC)    |
+
+##### ⚠️ Important: If you don’t change REAL_API_BASE, the proxy will not know where to forward the requests.
+
+
+
 ### 1. Install Docker
 Make sure [Docker](https://www.docker.com/) is installed on your computer.  
 (If you can run `docker --version` in a terminal, it’s ready.)
@@ -79,41 +113,6 @@ You can also test with:
 ```bash
 curl http://localhost:3001/api/service-info
 ```
-
----
-
-## ⚙️ Configuration (You MUST set this)
-
-Before you can use the proxy, you **must tell it where your Beacon API is**.
-
-Open the file `docker-compose.yml` and replace the value of `REAL_API_BASE`
-(currently `MY_API_ENDPOINT`) with the URL of your real Beacon API.
-
-For example:
-
-```yaml
-services:
-  beacon-proxy:
-    build: .
-    ports:
-      - "3001:8080"
-    environment:
-      REAL_API_BASE: HERE_YOUR_API_ENDPOINT    # ← CHANGE THIS
-      PROXY_BASE_PATH: /api
-      ALLOWED_ORIGINS: http://localhost:3000
-      UPSTREAM_TIMEOUT: 60
-      PORT: 8080
-```
-
-| Variable          | Description                                               | Default                              |
-|-------------------|-----------------------------------------------------------|--------------------------------------|
-| REAL_API_BASE     | Required — URL of your real Beacon API (must be changed). | HERE_YOUR_API_ENDPOINT               |
-| PROXY_BASE_PATH   | Path prefix used by your web app (default /api).          | /api                                 |
-| ALLOWED_ORIGINS   | Which websites are allowed to use this proxy (CORS)       | http://localhost:3000                |
-| PORT              | Internal port used by the container                       | 8080 (exposed as 3001 on your PC)    |
-
-##### ⚠️ Important: If you don’t change REAL_API_BASE, the proxy will not know where to forward the requests.
-
 
 ---
 
