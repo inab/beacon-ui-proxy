@@ -1,4 +1,4 @@
-# Beacon Proxy for UI app
+# Beacon Proxy for Frontend UI App
 
 This is a **simple web proxy** that allows you to access the  [Beacon Network OMOP API](https://unicas.imib.es/beacon-network-omop/api) from your browser or web applications **without CORS problems**.
 
