@@ -40,11 +40,13 @@ services:
 
 ##### ⚠️ Important: If you don’t change REAL_API_BASE, the proxy will not know where to forward the requests.
 
-
+---
 
 ### 1. Install Docker
 Make sure [Docker](https://www.docker.com/) is installed on your computer.  
 (If you can run `docker --version` in a terminal, it’s ready.)
+
+---
 
 ### 2. Start the Proxy
 
@@ -62,6 +64,8 @@ docker compose up -d
 ```
 
 The proxy will run in the background.
+
+---
 
 ### 3. Use it
 
@@ -114,6 +118,7 @@ You can also test with:
 curl http://localhost:3001/api/service-info
 ```
 
+---
 ---
 
 ## 👥 Authors
