@@ -1,6 +1,6 @@
 # Beacon Proxy for Frontend UI App
 
-This is a **simple web proxy** that allows you to access the  [Beacon Network OMOP API](https://unicas.imib.es/beacon-network-omop/api) from your browser or web applications **without CORS problems**.
+This is a **simple web proxy** that allows you to access the  Beacon Network OMOP API's from your browser or from the [Beacon UI application](https://github.com/elixir-europe/beacon-ui/tree/dev) **without CORS problems**.
 
 You don't need to know Python or Docker details — just follow the instructions below.
 
