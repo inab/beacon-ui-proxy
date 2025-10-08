@@ -2,13 +2,20 @@
 
 This is a **simple web proxy** that allows you to access the  [Beacon Network OMOP API](https://unicas.imib.es/beacon-network-omop/api) from your browser or web applications **without CORS problems**.
 
-You don’t need to know Python or Docker details — just follow the instructions below.
+You don't need to know Python or Docker details — just follow the instructions below.
 
 ---
 
 ## 🚀 Quick Start
 
-### 0. ⚙️ Configuration (You MUST set this)
+
+### 0. Install Docker
+Make sure [Docker](https://www.docker.com/) is installed on your computer.  
+(If you can run `docker --version` in a terminal, it's ready.)
+
+---
+
+### 1. ⚙️ Configuration (You MUST set this)
 
 Before you can use the proxy, you **must tell it where your Beacon API is**.
 
@@ -38,13 +45,7 @@ services:
 | ALLOWED_ORIGINS   | Which websites are allowed to use this proxy (CORS)       | http://localhost:3000                |
 | PORT              | Internal port used by the container                       | 8080 (exposed as 3001 on your PC)    |
 
-##### ⚠️ Important: If you don’t change REAL_API_BASE, the proxy will not know where to forward the requests.
-
----
-
-### 1. Install Docker
-Make sure [Docker](https://www.docker.com/) is installed on your computer.  
-(If you can run `docker --version` in a terminal, it’s ready.)
+##### ⚠️ Important: If you don't change REAL_API_BASE, the proxy will not know where to forward the requests.
 
 ---
 
