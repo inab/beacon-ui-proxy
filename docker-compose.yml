@@ -1,0 +1,11 @@
+services:
+  beacon-proxy:
+    build: .
+    ports:
+      - "3001:8080"
+    environment:
+      REAL_API_BASE: http://3.123.4.104:5050/api
+      PROXY_BASE_PATH: /api
+      ALLOWED_ORIGINS: http://localhost:3000
+      UPSTREAM_TIMEOUT: 60
+      PORT: 8080
